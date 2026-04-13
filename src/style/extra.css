@@ -11,7 +11,9 @@ a[target="_blank"]::after {
     mask-position: center;
     mask-size: contain;
     mask-image: url("/images/external-link.svg");
-    background-color: var(--md-default-fg-color--lighter);
+    background-color: var(--md-default-fg-color--light);
+    transition: color .25s, opacity 125ms;
+    opacity: 0;
 
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -20,5 +22,5 @@ a[target="_blank"]::after {
 }
 
 a[target="_blank"]:hover::after {
-    background-color: var(--md-default-fg-color--light);
+    opacity: 1;
 }
