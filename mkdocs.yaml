@@ -20,3 +20,6 @@ markdown_extensions:
   - toc:
       permalink: true
       separator: "_"
+
+theme:
+  name: material
