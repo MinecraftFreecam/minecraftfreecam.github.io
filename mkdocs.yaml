@@ -25,6 +25,7 @@ plugins:
   - privacy:
       links_attr_map:
         target: _blank
+  - search
 
 theme:
   name: material
@@ -37,6 +38,7 @@ theme:
     - navigation.top
     - toc.follow
     - toc.integrate
+    - search.suggest
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
