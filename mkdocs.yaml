@@ -1,6 +1,7 @@
 site_name: Freecam
 site_url: https://minecraftfreecam.github.io
-# edit_uri_template: https://github.com/MinecraftFreecam/minecraftfreecam.github.io/blob/main/{path}
+repo_url: https://github.com/MinecraftFreecam/Freecam
+edit_uri_template: https://github.com/MinecraftFreecam/minecraftfreecam.github.io/blob/main/{path}
 dev_addr: localhost:8080
 use_directory_urls: true
 docs_dir: src
@@ -10,7 +11,6 @@ nav:
   - Home: index.md
   - Modrinth: https://modrinth.com/mod/freecam/
   - CurseForge: https://www.curseforge.com/minecraft/mc-mods/free-cam
-  - GitHub: https://github.com/MinecraftFreecam/Freecam
   - Issues: https://github.com/MinecraftFreecam/Freecam/issues
 
 hooks:
