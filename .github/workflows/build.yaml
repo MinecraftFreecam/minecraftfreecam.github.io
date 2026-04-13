@@ -1,6 +1,8 @@
 name: Build
 
 on:
+  schedule:
+    - cron: '0 */6 * * *'
   push:
     branches: [ main ]
   pull_request:
@@ -81,7 +83,7 @@ jobs:
 
   deploy:
     name: Deploy
-    if: github.event_name == 'push' || inputs.deploy
+    if: github.event_name == 'push' || github.event_name == 'schedule' || inputs.deploy
     runs-on: ubuntu-slim
     needs: build
     timeout-minutes: 10
