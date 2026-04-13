@@ -13,6 +13,9 @@ nav:
   - GitHub: https://github.com/MinecraftFreecam/Freecam
   - Issues: https://github.com/MinecraftFreecam/Freecam/issues
 
+hooks:
+  - freecam_files.py
+
 markdown_extensions:
   - toc:
       permalink: true
