@@ -1,0 +1,24 @@
+
+/* Light-mode palette */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: rgb(0, 42, 54); /* Freecam dark teal */
+    --md-primary-fg-color--light: rgb(0, 140, 180);
+    --md-primary-fg-color--dark: rgb(0, 25, 33);
+    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+}
+
+/* Dark-mode palette */
+[data-md-color-scheme="slate"] {
+    /* Default hue is indigo (225°), rotate to teal */
+    --md-hue: 195deg;
+
+    --md-primary-fg-color: rgb(0, 42, 54); /* Freecam dark teal */
+    --md-primary-fg-color--light: rgb(0, 77, 100);
+    --md-primary-fg-color--dark: rgb(0, 25, 33);
+    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+
+    /* Link text uses primary-fg-color by default, but that's too dark */
+    --md-typeset-a-color: rgb(139, 208, 239);
+}

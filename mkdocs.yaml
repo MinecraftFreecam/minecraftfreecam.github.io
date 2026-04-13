@@ -18,6 +18,7 @@ hooks:
   - freecam_files.py
 
 extra_css:
+  - style/palette.css
   - style/extra.css
 
 markdown_extensions:
