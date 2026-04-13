@@ -11,7 +11,9 @@ a[target="_blank"]::after {
     mask-position: center;
     mask-size: contain;
     mask-image: url("/images/external-link.svg");
-    background-color: var(--md-default-fg-color--lighter);
+    background-color: var(--md-primary-bg-color);
+    transition: background-color 125ms;
+    opacity: 0.7;
 
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -19,6 +21,17 @@ a[target="_blank"]::after {
     -webkit-mask-image: url("/images/external-link.svg");
 }
 
-a[target="_blank"]:hover::after {
-    background-color: var(--md-default-fg-color--light);
+.md-typeset, .md-nav__list {
+    & a[target="_blank"] {
+        &::after {
+            background-color: var(--md-default-fg-color--light);
+        }
+        &:hover::after {
+            background-color: var(--md-accent-fg-color);
+        }
+    }
+}
+
+.md-footer-meta a[target="_blank"]:hover::after {
+    background-color: var(--md-footer-fg-color);
 }
