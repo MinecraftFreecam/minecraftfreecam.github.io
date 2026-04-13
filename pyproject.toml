@@ -16,4 +16,8 @@ dev = [
 
 [tool.uv]
 package = false
-
+constraint-dependencies = [
+    # Needed for mkdocs live reload to work
+    # https://github.com/mkdocs/mkdocs/issues/4032
+    "click<=8.2.1",
+]
