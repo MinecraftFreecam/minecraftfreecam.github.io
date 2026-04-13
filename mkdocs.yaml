@@ -26,6 +26,8 @@ theme:
   logo: images/icon_mono.svg
   favicon: images/icon.svg
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
     - navigation.top
     - toc.follow
