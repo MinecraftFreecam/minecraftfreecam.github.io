@@ -10,5 +10,3 @@
 ### Translation
 
 <!-- freecam:translation -->
-
-<!-- freecam:config -->

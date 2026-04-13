@@ -9,6 +9,7 @@ strict: true
 
 nav:
   - Home: index.md
+  - config.md
   - Modrinth: https://modrinth.com/mod/freecam/
   - CurseForge: https://www.curseforge.com/minecraft/mc-mods/free-cam
   - Issues: https://github.com/MinecraftFreecam/Freecam/issues
