@@ -21,6 +21,11 @@ markdown_extensions:
       permalink: true
       separator: "_"
 
+plugins:
+  - privacy:
+      links_attr_map:
+        target: _blank
+
 theme:
   name: material
   logo: images/icon_mono.svg
