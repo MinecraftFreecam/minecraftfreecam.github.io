@@ -1,0 +1,103 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Deploy result
+        type: boolean
+        default: true
+      repository:
+        description: Freecam repo
+        type: string
+        default: &repo MinecraftFreecam/Freecam
+      ref:
+        description: Freecam ref
+        type: string
+        required: true
+
+env:
+  default_repo: *repo
+
+# Group workflow runs by event and ref.
+# New runs cancel any pending run.
+# PR runs also cancel in-progress runs.
+concurrency:
+  group: website-${{ github.event_name }}-${{ github.ref }}-${{ inputs.repository }}-${{ inputs.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Checkout Freecam files
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ inputs.repository || env.default_repo }}
+          ref: ${{ inputs.ref || 'main' }}
+          path: freecam
+          sparse-checkout: |
+            README.md
+            CHANGELOG.md
+            metadata.toml
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install CI dependencies
+        run: uv sync --locked --no-group dev
+
+      - name: Build website
+        run: uv run mkdocs build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+          include-hidden-files: true
+
+  deploy:
+    name: Deploy
+    if: github.event_name == 'push' || inputs.deploy
+    runs-on: ubuntu-slim
+    needs: build
+    timeout-minutes: 10
+
+    permissions:
+      # To deploy to Pages
+      pages: write
+      # To verify the deployment originates from an appropriate source
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v5
+
