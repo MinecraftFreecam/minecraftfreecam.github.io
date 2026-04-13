@@ -16,6 +16,9 @@ nav:
 hooks:
   - freecam_files.py
 
+extra_css:
+  - style/extra.css
+
 markdown_extensions:
   - toc:
       permalink: true
