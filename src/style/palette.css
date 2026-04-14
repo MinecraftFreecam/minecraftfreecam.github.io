@@ -1,24 +1,34 @@
+/* Freecam color palette based on our logo color (hue 194°) */
 
-/* Light-mode palette */
-[data-md-color-scheme="default"] {
-    --md-primary-fg-color: rgb(0, 42, 54); /* Freecam dark teal */
-    --md-primary-fg-color--light: rgb(0, 140, 180);
-    --md-primary-fg-color--dark: rgb(0, 25, 33);
-    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+[data-md-color-primary=freecam] {
+    --md-primary-fg-color: hsl(194, 100%, 28%);
+    --md-primary-fg-color--light: hsl(194, 85%, 40%);
+    --md-primary-fg-color--dark: hsl(194, 100%, 20%);
+    --md-primary-fg-color--transparent: hsla(194, 100%, 28%, 0.1);
+
+    --md-primary-bg-color: #fff;
     --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
 
-/* Dark-mode palette */
-[data-md-color-scheme="slate"] {
-    /* Default hue is indigo (225°), rotate to teal */
-    --md-hue: 195deg;
+[data-md-color-accent=freecam] {
+    --md-accent-fg-color: hsl(194, 100%, 48%);
+    --md-accent-fg-color--transparent: hsla(194, 100%, 48%, 0.1);
 
-    --md-primary-fg-color: rgb(0, 42, 54); /* Freecam dark teal */
-    --md-primary-fg-color--light: rgb(0, 77, 100);
-    --md-primary-fg-color--dark: rgb(0, 25, 33);
-    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
-    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+}
 
-    /* Link text uses primary-fg-color by default, but that's too dark */
-    --md-typeset-a-color: rgb(139, 208, 239);
+/* Dark-mode theme */
+[data-md-color-scheme=slate] {
+    --md-hue: 194;
+
+    &[data-md-color-primary=freecam] {
+        --md-primary-fg-color: hsl(194, 90%, 42%);
+        --md-primary-fg-color--light: hsl(194, 90%, 55%);
+        --md-primary-fg-color--dark: hsl(194, 90%, 32%);
+    }
+
+    &[data-md-color-accent=freecam] {
+        --md-accent-fg-color: hsl(194, 100%, 60%);
+    }
 }
