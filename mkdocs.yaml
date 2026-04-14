@@ -17,6 +17,9 @@ nav:
 hooks:
   - freecam_files.py
 
+watch:
+  - overrides
+
 extra_css:
   - style/palette.css
   - style/extra.css
@@ -34,7 +37,7 @@ plugins:
 
 theme:
   name: materialx
-  logo: images/icon_mono.svg
+  custom_dir: overrides
   favicon: images/icon.svg
   features:
     - navigation.instant
