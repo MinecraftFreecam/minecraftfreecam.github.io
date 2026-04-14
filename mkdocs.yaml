@@ -33,7 +33,7 @@ plugins:
   - search
 
 theme:
-  name: material
+  name: materialx
   logo: images/icon_mono.svg
   favicon: images/icon.svg
   features:
@@ -44,6 +44,7 @@ theme:
     - toc.follow
     - toc.integrate
     - search.suggest
+  topbar_style: glass
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
