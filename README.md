@@ -56,7 +56,7 @@ A [MkDocs hook](https://www.mkdocs.org/user-guide/configuration/#hooks) (`freeca
 ## CI
 
 The site is built and deployed via GitHub Actions (`.github/workflows/build.yaml`).
-Deployments happen on push to `main` and on a six-hourly schedule, to sync with upstream changes.
+Deployments happen on push to `main` and daily at ~6pm, to sync with upstream changes.
 Deployment can also be triggered manually, against any Freecam ref.
 
 [Freecam]: https://github.com/MinecraftFreecam/Freecam

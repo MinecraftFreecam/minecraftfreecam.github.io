@@ -2,7 +2,8 @@ name: Build
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # Daily at 18:05 UTC
+    - cron: '5 18 * * *'
   push:
     branches: [ main ]
   pull_request:
