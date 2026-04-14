@@ -74,7 +74,7 @@ jobs:
         run: uv sync --locked --no-group dev
 
       - name: Build website
-        run: uv run mkdocs build
+        run: uv run properdocs build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

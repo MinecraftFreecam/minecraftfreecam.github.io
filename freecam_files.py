@@ -3,7 +3,7 @@ import tomllib
 from os import environ
 from pathlib import Path
 from typing import TextIO
-from mkdocs.exceptions import PluginError
+from properdocs.exceptions import PluginError
 
 
 FREECAM_DIRS = [
@@ -67,7 +67,7 @@ def on_serve(server, config, builder):
     """
     Called when the serve command is used.
     It only runs once, after the first build finishes.
-    https://www.mkdocs.org/dev-guide/plugins/#on_serve
+    https://properdocs.org/dev-guide/plugins/#on_serve
     """
     directory = _state.get("watch")
     if directory:
@@ -79,7 +79,7 @@ def on_pre_build(config):
     Load Freecam files into _state.
 
     Called before starting the build.
-    https://www.mkdocs.org/dev-guide/plugins/#on_pre_build
+    https://properdocs.org/dev-guide/plugins/#on_pre_build
     """
     for directory in FREECAM_DIRS:
         if directory.is_dir() and _load_state(directory):
@@ -98,7 +98,7 @@ def on_page_markdown(markdown, page, config, files):
     Inject Freecam's readme sections into markdown content.
 
     Called after the page's markdown is loaded from file.
-    https://www.mkdocs.org/dev-guide/plugins/#on_page_markdown
+    https://properdocs.org/dev-guide/plugins/#on_page_markdown
     """
     sections = _state.get("readme_sections", {})
     lines = []
@@ -119,7 +119,7 @@ def on_page_context(context, page, config, nav):
     Load Freecam's metadata into template context.
 
     Called after the context for a page is created.
-    https://www.mkdocs.org/dev-guide/plugins/#on_page_context
+    https://properdocs.org/dev-guide/plugins/#on_page_context
     """
     context["freecam"] = _state.get("metadata", {})
     return context

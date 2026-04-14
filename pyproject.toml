@@ -4,7 +4,7 @@ version = "0.0.0"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "mkdocs>=1.4,<1.7",
+    "properdocs>=1.6.7",
     "mkdocs-materialx>=10.1.3",
 ]
 
@@ -17,8 +17,3 @@ dev = [
 
 [tool.uv]
 package = false
-constraint-dependencies = [
-    # Needed for mkdocs live reload to work
-    # https://github.com/mkdocs/mkdocs/issues/4032
-    "click<=8.2.1",
-]

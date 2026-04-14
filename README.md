@@ -2,7 +2,7 @@
 
 Source for [minecraftfreecam.github.io](https://minecraftfreecam.github.io), [Freecam]'s landing page.
 
-The site is built using [MkDocs] and managed using [uv].
+The site is built using [ProperDocs] and managed using [uv].
 Some content is pulled from the Freecam repository at build time, such as the project README.
 
 ## Prerequisites
@@ -30,12 +30,12 @@ export FREECAM_DIR=../Freecam
 
 **Local development** — builds and serves the site (with live reload):
 ```sh
-uv run mkdocs serve
+uv run properdocs serve
 ```
 
 **Production build** — builds into `site/`:
 ```sh
-uv run mkdocs build
+uv run properdocs build
 ```
 
 **Lints** — you can run ruff, pytest, and mypy:
@@ -48,10 +48,10 @@ uv run mypy .
 
 ## How it works
 
-A [MkDocs hook](https://www.mkdocs.org/user-guide/configuration/#hooks) (`freecam_files.py`) runs at build time and:
+A [hook](https://properdocs.org/user-guide/configuration/#hooks) (`freecam_files.py`) runs at build time and:
 - Reads `README.md` from the Freecam source, extracting sections marked with `<!-- website:start id="…" -->` and `<!-- website:end -->` tags
 - Injects extracted content into `src/index.md` at `<!-- freecam:<id> -->` placeholders
-- Exposes `metadata.toml` to MkDocs templates via page context
+- Adds `metadata.toml` to page context
 
 ## CI
 
@@ -60,7 +60,7 @@ Deployments happen on push to `main` and daily at ~6pm, to sync with upstream ch
 Deployment can also be triggered manually, against any Freecam ref.
 
 [Freecam]: https://github.com/MinecraftFreecam/Freecam
-[MkDocs]: https://www.mkdocs.org
+[ProperDocs]: https://properdocs.org
 [uv]: https://docs.astral.sh/uv
 [uv-installation]: https://docs.astral.sh/uv/getting-started/installation
 
