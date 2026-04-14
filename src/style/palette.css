@@ -10,14 +10,6 @@
     --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
 
-[data-md-color-accent=freecam] {
-    --md-accent-fg-color: hsl(194, 100%, 48%);
-    --md-accent-fg-color--transparent: hsla(194, 100%, 48%, 0.1);
-
-    --md-accent-bg-color: #fff;
-    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
-}
-
 /* Dark-mode theme */
 [data-md-color-scheme=slate] {
     --md-hue: 194;
@@ -26,9 +18,5 @@
         --md-primary-fg-color: hsl(194, 90%, 42%);
         --md-primary-fg-color--light: hsl(194, 90%, 55%);
         --md-primary-fg-color--dark: hsl(194, 90%, 32%);
-    }
-
-    &[data-md-color-accent=freecam] {
-        --md-accent-fg-color: hsl(194, 100%, 60%);
     }
 }

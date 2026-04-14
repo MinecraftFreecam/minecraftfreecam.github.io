@@ -56,7 +56,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: freecam
-      accent: freecam
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -65,7 +65,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: freecam
-      accent: freecam
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
