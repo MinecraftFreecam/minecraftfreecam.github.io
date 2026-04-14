@@ -1,3 +1,7 @@
+:root {
+    /* 'open-in-new' from Material Design Icons */
+    --mdi-open-in-new: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Ctitle%3Eopen-in-new%3C%2Ftitle%3E%3Cpath%20d%3D%22M14%2C3V5H17.59L7.76%2C14.83L9.17%2C16.24L19%2C6.41V10H21V3M19%2C19H5V5H12V3H5C3.89%2C3%203%2C3.9%203%2C5V19A2%2C2%200%200%2C0%205%2C21H19A2%2C2%200%200%2C0%2021%2C19V12H19V19Z%22%20%2F%3E%3C%2Fsvg%3E");
+}
 
 /* Add an indicator to external links */
 a[target="_blank"]::after {
@@ -10,7 +14,7 @@ a[target="_blank"]::after {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
-    mask-image: url("/images/external-link.svg");
+    mask-image: var(--mdi-open-in-new);
     background-color: var(--md-primary-bg-color);
     transition: background-color 125ms;
     opacity: 0.7;
@@ -18,7 +22,7 @@ a[target="_blank"]::after {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
-    -webkit-mask-image: url("/images/external-link.svg");
+    -webkit-mask-image: var(--mdi-open-in-new);
 }
 
 .md-typeset a[target="_blank"] {
