@@ -71,7 +71,10 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install CI dependencies
-        run: uv sync --locked --no-group dev
+        run: |
+          uv sync --locked ${{
+            github.event_name != 'pull_request' && '--no-group dev' || ''
+          }}
 
       - name: Lint
         if: github.event_name == 'pull_request'
