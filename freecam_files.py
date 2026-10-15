@@ -3,8 +3,8 @@ import tomllib
 from os import environ
 from pathlib import Path
 from typing import TextIO
-from properdocs.exceptions import PluginError
 
+from properdocs.exceptions import PluginError
 
 FREECAM_DIRS = [
     Path(it)
