@@ -38,12 +38,12 @@ uv run properdocs serve
 uv run properdocs build
 ```
 
-**Lints** — you can run ruff, pytest, and mypy:
+**Lints** — you can run ruff, ty, and pytest:
 ```sh
 uv run ruff format
 uv run ruff check
+uv run ty check
 uv run pytest
-uv run mypy .
 ```
 
 ## How it works
@@ -63,4 +63,3 @@ Deployment can also be triggered manually, against any Freecam ref.
 [ProperDocs]: https://properdocs.org
 [uv]: https://docs.astral.sh/uv
 [uv-installation]: https://docs.astral.sh/uv/getting-started/installation
-
